@@ -6,9 +6,11 @@ import re
 # This script uses the Osu API V1 because the V2 OAuth endpoint is busted...
 
 # Config 
-SECRET_KEY = "???"
-USERNAME = "???"
-NUMBER_OF_PLAYS = 50
+SECRET_KEY = input("Enter API key: ")
+USERNAME = input("Enter username: ")
+NUMBER_OF_PLAYS = int(input("Enter number of plays, max 50: "))
+
+NUMBER_OF_PLAYS = min(50, NUMBER_OF_PLAYS)
 
 payload = {
 "k": SECRET_KEY,
